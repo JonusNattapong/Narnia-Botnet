@@ -1,0 +1,68 @@
+# Rust build artifacts
+target/
+Cargo.lock
+
+# Configuration files (sensitive)
+.env
+.env.local
+.env.production
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Log files
+*.log
+logs/
+
+# Tor data
+tor_data/
+*.onion
+
+# Compiled binaries
+bot
+c2
+builder
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Backup files
+*.bak
+*.backup
+
+# Sensitive configuration
+config/production.toml
+config/c2.toml
+config/bot.toml
+
+# Test files
+test_*/
+*_test
+
+# Cryptocurrency wallets/keys (if any)
+wallet.dat
+*.key
+*.pem
+
+# Screenshots and captured data
+screenshots/
+captured_data/
