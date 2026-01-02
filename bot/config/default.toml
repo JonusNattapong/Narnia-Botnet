@@ -1,0 +1,40 @@
+# Default configuration for Narnia Bot
+# This file contains default settings that can be overridden
+
+[bot]
+name = "NarniaBot"
+version = "0.1.0"
+checkin_interval_seconds = 30
+max_retry_attempts = 3
+retry_delay_seconds = 10
+
+[c2]
+primary_url = "http://localhost:8000"
+backup_urls = []
+tor_enabled = false
+dns_enabled = false
+encryption_enabled = false
+
+[modules]
+ddos_enabled = true
+mining_enabled = true
+worm_enabled = true
+proxy_enabled = true
+exfil_enabled = true
+ransomware_enabled = false
+p2p_enabled = true
+
+[security]
+anti_vm_enabled = true
+etw_bypass_enabled = false
+amsi_bypass_enabled = false
+fileless_execution = false
+polymorphic_enabled = false
+self_delete_on_detection = false
+
+[network]
+user_agent = "NarniaBot/0.1.0"
+timeout_seconds = 30
+max_connections = 10
+p2p_listen_port = 8081
+p2p_bootstrap_peers = []

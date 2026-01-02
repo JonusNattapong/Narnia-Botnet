@@ -1,0 +1,18 @@
+[package]
+name = "c2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rocket = { version = "0.5.0", features = ["json"] }
+rusqlite = "0.29"
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1", features = ["full"] }
+arti-client = "0.20"
+tor-rtcompat = "0.20"
+futures = "0.3"
+base64 = "0.21"
+rand = "0.8"
+dotenvy = "0.15"
+config = "0.14"

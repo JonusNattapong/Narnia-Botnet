@@ -2,10 +2,13 @@
 target/
 Cargo.lock
 
-# Configuration files (sensitive)
+# Sensitive configuration files
 .env
 .env.local
 .env.production
+config/production.toml
+config/c2.toml
+config/bot.toml
 
 # Database files
 *.db
@@ -19,11 +22,6 @@ logs/
 # Tor data
 tor_data/
 *.onion
-
-# Compiled binaries
-bot
-c2
-builder
 
 # OS generated files
 .DS_Store
@@ -49,16 +47,11 @@ Thumbs.db
 *.bak
 *.backup
 
-# Sensitive configuration
-config/production.toml
-config/c2.toml
-config/bot.toml
-
 # Test files
 test_*/
 *_test
 
-# Cryptocurrency wallets/keys (if any)
+# Cryptocurrency wallets/keys
 wallet.dat
 *.key
 *.pem
