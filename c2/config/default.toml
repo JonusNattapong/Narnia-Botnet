@@ -29,8 +29,9 @@ ttl = 300
 max_chunk_size = 63
 
 [security]
-enable_encryption = false
-encryption_key = "change_this_encryption_key_32_chars_min"
+enable_encryption = true
+encryption_key = "narnia_secure_encryption_key_32_chars!"
+jwt_secret = "narnia_jwt_secret_key_change_in_production"
 token_expiry_hours = 24
 rate_limit_requests = 100
 rate_limit_window_seconds = 60

@@ -51,6 +51,7 @@ pub struct DnsConfig {
 pub struct SecurityConfig {
     pub enable_encryption: bool,
     pub encryption_key: String,
+    pub jwt_secret: String,
     pub token_expiry_hours: u64,
     pub rate_limit_requests: u32,
     pub rate_limit_window_seconds: u64,
@@ -129,8 +130,9 @@ impl Default for DnsConfig {
 impl Default for SecurityConfig {
     fn default() -> Self {
         Self {
-            enable_encryption: false,
-            encryption_key: "change_this_encryption_key".to_string(),
+            enable_encryption: true, // Enable encryption by default
+            encryption_key: "narnia_secure_encryption_key_32_chars!".to_string(),
+            jwt_secret: "narnia_jwt_secret_key_change_in_production".to_string(),
             token_expiry_hours: 24,
             rate_limit_requests: 100,
             rate_limit_window_seconds: 60,
@@ -242,9 +244,5 @@ impl C2Config {
 
     pub fn is_dns_enabled(&self) -> bool {
         self.dns.enabled
-    }
-
-    pub fn is_encryption_enabled(&self) -> bool {
-        self.security.enable_encryption
     }
 }
